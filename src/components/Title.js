@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function Title(props) {
   return (
     <div>
-      <span>This is the Title component</span>
+      <h1>{props.imageTitle}</h1>
     </div>
   );
 }

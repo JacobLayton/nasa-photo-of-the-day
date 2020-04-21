@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
 function Image(props) {
+  console.log(props);
   return (
     <div>
-      <span>This is the Image component</span>
+      <img src={props.imageURL} />
     </div>
   );
 }

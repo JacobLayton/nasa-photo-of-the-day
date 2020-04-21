@@ -7,7 +7,7 @@ import Image from "./components/Image.js";
 const axios = require("axios");
 
 function App() {
-  const [nasaData, setNasaData] = useState();
+  const [nasaData, setNasaData] = useState({});
 
   useEffect(() => {
     axios
@@ -20,12 +20,12 @@ function App() {
       });
   }, []);
 
-  console.log(nasaData);
+  // console.log(nasaData.title);
   return (
     <div className="App">
-      <Title />
-      <Image />
-      <Explanation />
+      <Title imageTitle={nasaData.title} />
+      <Image imageURL={nasaData.hdurl} />
+      <Explanation imageExplanation={nasaData.explanation} />
     </div>
   );
 }
