@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import Title from "./components/Title.js";
+import Explanation from "./components/Explanation.js";
+import Image from "./components/Image.js";
 
 const axios = require("axios");
 
 function App() {
-  const [nasaData, setNasaData] = useState();
+  const [nasaData, setNasaData] = useState({});
 
   useEffect(() => {
     axios
@@ -17,17 +20,12 @@ function App() {
       });
   }, []);
 
-  console.log(nasaData);
+  // console.log(nasaData.title);
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun{" "}
-        <span role="img" aria-label="go!">
-          🚀
-        </span>
-        !
-      </p>
+      <Title imageTitle={nasaData.title} />
+      <Image imageURL={nasaData.hdurl} />
+      <Explanation imageExplanation={nasaData.explanation} />
     </div>
   );
 }
