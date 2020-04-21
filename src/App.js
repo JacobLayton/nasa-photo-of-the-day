@@ -10,12 +10,14 @@ function App() {
     axios
       .get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
       .then((res) => {
-        console.log(res);
+        setNasaData(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
-  });
+  }, []);
+
+  console.log(nasaData);
   return (
     <div className="App">
       <p>
