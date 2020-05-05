@@ -10,3 +10,8 @@ p {
 img {
   width: 100vw;
 }
+
+.picker {
+  background: white;
+  color: white;
+}
