@@ -3,6 +3,7 @@ import "./App.css";
 import Title from "./components/Title.js";
 import Explanation from "./components/Explanation.js";
 import Image from "./components/Image.js";
+import DatePicker from "./components/DatePicker";
 
 const axios = require("axios");
 
@@ -26,6 +27,7 @@ function App() {
       <Title imageTitle={nasaData.title} />
       <Image imageURL={nasaData.hdurl} />
       <Explanation imageExplanation={nasaData.explanation} />
+      <DatePicker />
     </div>
   );
 }
